@@ -6,14 +6,14 @@
  * Place any image- and text-like content side-by-side, as per: 
  * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
  */
-.media,
-%media {
+.#{$namespace}media,
+%#{$namespace}media {
     @extend %cf;
     display: block;
 }
 
-    .media__img,
-    %media__img {
+    .#{$namespace}media__img,
+    %#{$namespace}media__img {
         float: left;
         margin-right: $base-spacing-unit;
 
@@ -24,8 +24,8 @@
         /**
          * Reversed image location (right instead of left). Extends `.media`.
          */
-        .media--rev > &,
-        %media--rev > & {
+        .#{$namespace}media--rev > &,
+        %#{$namespace}media--rev > & {
             float: right;
             margin-right: 0;
             margin-left: $base-spacing-unit;
@@ -33,8 +33,8 @@
 
     }
 
-    .media__body,
-    %media__body {
+    .#{$namespace}media__body,
+    %#{$namespace}media__body {
         overflow: hidden;
 
         &,
