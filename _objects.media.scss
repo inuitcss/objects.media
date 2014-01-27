@@ -43,3 +43,21 @@
         }
 
     }
+
+
+
+
+
+/**
+ * Flush media objects have no space between the image- and text-content.
+ */
+.#{$namespace}media--flush,
+%#{$namespace}media--flush {
+
+    .#{$namespace}media__img,
+    %#{$namespace}media__img {
+        margin-right: 0;
+        margin-left:  0;
+    }
+
+}
