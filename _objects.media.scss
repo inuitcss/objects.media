@@ -2,6 +2,12 @@
     #MEDIA
 \*------------------------------------*/
 
+/**
+ * Place any image- and text-like content side-by-side, as per:
+ * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ *
+ * Predefine the variables below in order to alter and enable specific features.
+ */
 $media-gutter:          $base-spacing-unit !default;
 $media-gutter--small:   halve($media-gutter) !default;
 $media-gutter--large:   double($media-gutter) !default;
@@ -9,10 +15,10 @@ $media-gutter--large:   double($media-gutter) !default;
 $enable-media--small:   false !default;
 $enable-media--large:   false !default;
 
-/**
- * Place any image- and text-like content side-by-side, as per: 
- * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
- */
+
+
+
+
 .#{$namespace}media,
 %#{$namespace}media {
     @extend %clearfix;
