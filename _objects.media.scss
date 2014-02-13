@@ -15,7 +15,7 @@ $enable-media--large:   false !default;
  */
 .#{$namespace}media,
 %#{$namespace}media {
-    @extend %cf;
+    @extend %clearfix;
     display: block;
 }
 
