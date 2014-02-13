@@ -2,6 +2,8 @@
     #MEDIA
 \*------------------------------------*/
 
+$media-gutter:  $base-spacing-unit !default;
+
 /**
  * Place any image- and text-like content side-by-side, as per: 
  * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
@@ -15,7 +17,7 @@
     .#{$namespace}media__img,
     %#{$namespace}media__img {
         float: left;
-        margin-right: $base-spacing-unit;
+        margin-right: $media-gutter;
 
         > img {
             display: block;
@@ -28,7 +30,7 @@
         %#{$namespace}media--rev > & {
             float: right;
             margin-right: 0;
-            margin-left: $base-spacing-unit;
+            margin-left: $media-gutter;
         }
 
     }
