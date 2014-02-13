@@ -14,6 +14,8 @@ $media-gutter--large:   double($media-gutter) !default;
 
 $enable-media--small:   false !default;
 $enable-media--large:   false !default;
+$enable-media--flush:   false !default;
+$enable-media--rev:     false !default;
 
 
 
@@ -32,16 +34,6 @@ $enable-media--large:   false !default;
 
         > img {
             display: block;
-        }
-
-        /**
-         * Reversed image location (right instead of left). Extends `.media`.
-         */
-        .#{$namespace}media--rev > &,
-        %#{$namespace}media--rev > & {
-            float: right;
-            margin-right: 0;
-            margin-left: $media-gutter;
         }
 
     }
@@ -122,13 +114,42 @@ $enable-media--large:   false !default;
 /**
  * Flush media objects have no space between the image- and text-content.
  */
-.#{$namespace}media--flush,
-%#{$namespace}media--flush {
 
-    > .#{$namespace}media__img,
-    > %#{$namespace}media__img {
-        margin-right: 0;
-        margin-left:  0;
+@if ($enable-media--flush == true) {
+
+    .#{$namespace}media--flush,
+    %#{$namespace}media--flush {
+
+        > .#{$namespace}media__img,
+        > %#{$namespace}media__img {
+            margin-right: 0;
+            margin-left:  0;
+        }
+
+    }
+
+}
+
+
+
+
+
+/**
+ * Reversed image location (right instead of left). Extends `.media`.
+ */
+
+@if ($enable-media--rev == true) {
+
+    .#{$namespace}media--rev,
+    %#{$namespace}media--rev {
+
+        > .#{$namespace}media__img,
+        > %#{$namespace}media__img {
+            float: right;
+            margin-right: 0;
+            margin-left: $media-gutter;
+        }
+
     }
 
 }
