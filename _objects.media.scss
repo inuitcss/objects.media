@@ -2,7 +2,12 @@
     #MEDIA
 \*------------------------------------*/
 
-$media-gutter:  $base-spacing-unit !default;
+$media-gutter:          $base-spacing-unit !default;
+$media-gutter--small:   halve($media-gutter) !default;
+$media-gutter--large:   double($media-gutter) !default;
+
+$enable-media--small:   false !default;
+$enable-media--large:   false !default;
 
 /**
  * Place any image- and text-like content side-by-side, as per: 
@@ -51,13 +56,71 @@ $media-gutter:  $base-spacing-unit !default;
 
 
 /**
+ * Size variants.
+ */
+
+@if ($enable-media--small == true) {
+
+    .#{$namespace}media--small,
+    %#{$namespace}media--small {
+
+        > .#{$namespace}media__img,
+        > %#{$namespace}media__img {
+            margin-right: $media-gutter--small;
+        }
+
+        &.#{$namespace}media--rev,
+        &%#{$namespace}media--rev {
+
+            > .#{$namespace}media__img,
+            > %#{$namespace}media__img {
+                margin-right: 0;
+                margin-left:  $media-gutter--small;
+            }
+
+        }
+
+    }
+
+}
+
+@if ($enable-media--large == true) {
+
+    .#{$namespace}media--large,
+    %#{$namespace}media--large {
+
+        > .#{$namespace}media__img,
+        > %#{$namespace}media__img {
+            margin-right: $media-gutter--large;
+        }
+
+        &.#{$namespace}media--rev,
+        &%#{$namespace}media--rev {
+
+            > .media__img,
+            > %media__img {
+                margin-right: 0;
+                margin-left:  $media-gutter--large;
+            }
+
+        }
+
+    }
+
+}
+
+
+
+
+
+/**
  * Flush media objects have no space between the image- and text-content.
  */
 .#{$namespace}media--flush,
 %#{$namespace}media--flush {
 
-    .#{$namespace}media__img,
-    %#{$namespace}media__img {
+    > .#{$namespace}media__img,
+    > %#{$namespace}media__img {
         margin-right: 0;
         margin-left:  0;
     }
