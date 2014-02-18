@@ -67,13 +67,17 @@ $inuit-enable-media--flush: false !default;
             margin-right: $inuit-media-gutter--small;
         }
 
-        &.#{$inuit-namespace}media--rev,
-        &%#{$inuit-namespace}media--rev {
+        @if ($inuit-enable-media--rev == true) {
 
-            > .#{$inuit-namespace}media__img,
-            > %#{$inuit-namespace}media__img {
-                margin-right: 0;
-                margin-left:  $inuit-media-gutter--small;
+            &.#{$inuit-namespace}media--rev,
+            &%#{$inuit-namespace}media--rev {
+
+                > .#{$inuit-namespace}media__img,
+                > %#{$inuit-namespace}media__img {
+                    margin-right: 0;
+                    margin-left:  $inuit-media-gutter--small;
+                }
+
             }
 
         }
@@ -92,13 +96,17 @@ $inuit-enable-media--flush: false !default;
             margin-right: $inuit-media-gutter--large;
         }
 
-        &.#{$inuit-namespace}media--rev,
-        &%#{$inuit-namespace}media--rev {
+        @if ($inuit-enable-media--rev == true) {
 
-            > .media__img,
-            > %media__img {
-                margin-right: 0;
-                margin-left:  $inuit-media-gutter--large;
+            &.#{$inuit-namespace}media--rev,
+            &%#{$inuit-namespace}media--rev {
+
+                > .media__img,
+                > %media__img {
+                    margin-right: 0;
+                    margin-left:  $inuit-media-gutter--large;
+                }
+
             }
 
         }
