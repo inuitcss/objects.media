@@ -14,8 +14,8 @@ $inuit-media-gutter--large: double($inuit-media-gutter) !default;
 
 $inuit-enable-media--small: false !default;
 $inuit-enable-media--large: false !default;
-$inuit-enable-media--flush: false !default;
 $inuit-enable-media--rev:   false !default;
+$inuit-enable-media--flush: false !default;
 
 
 
@@ -112,29 +112,6 @@ $inuit-enable-media--rev:   false !default;
 
 
 /**
- * Flush media objects have no space between the image- and text-content.
- */
-
-@if ($inuit-enable-media--flush == true) {
-
-    .#{$inuit-namespace}media--flush,
-    %#{$inuit-namespace}media--flush {
-
-        > .#{$inuit-namespace}media__img,
-        > %#{$inuit-namespace}media__img {
-            margin-right: 0;
-            margin-left:  0;
-        }
-
-    }
-
-}
-
-
-
-
-
-/**
  * Reversed image location (right instead of left). Extends `.media`.
  */
 
@@ -148,6 +125,29 @@ $inuit-enable-media--rev:   false !default;
             float: right;
             margin-right: 0;
             margin-left: $inuit-media-gutter;
+        }
+
+    }
+
+}
+
+
+
+
+
+/**
+ * Flush media objects have no space between the image- and text-content.
+ */
+
+@if ($inuit-enable-media--flush == true) {
+
+    .#{$inuit-namespace}media--flush,
+    %#{$inuit-namespace}media--flush {
+
+        > .#{$inuit-namespace}media__img,
+        > %#{$inuit-namespace}media__img {
+            margin-right: 0;
+            margin-left:  0;
         }
 
     }
