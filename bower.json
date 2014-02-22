@@ -1,0 +1,16 @@
+{
+  "name": "inuit-media",
+  "version": "0.1.2",
+  "homepage": "https://github.com/inuitcss/objects.media",
+  "authors": [
+    "Harry Roberts <harry@csswizardry.com>"
+  ],
+  "description": "Nicole Sullivan’s media object in the inuitcss framework",
+  "main": "_objects.media.scss",
+  "keywords": [
+    "inuitcss",
+    "oocss",
+    "css"
+  ],
+  "license": "Apache"
+}
