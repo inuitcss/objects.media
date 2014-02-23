@@ -5,9 +5,9 @@
 /**
  * Place any image- and text-like content side-by-side, as per:
  * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
- *
- * Predefine the variables below in order to alter and enable specific features.
  */
+
+// Predefine the variables below in order to alter and enable specific features.
 $inuit-media-gutter:        $inuit-base-spacing-unit !default;
 $inuit-media-gutter--small: halve($inuit-media-gutter) !default;
 $inuit-media-gutter--large: double($inuit-media-gutter) !default;
@@ -53,11 +53,11 @@ $inuit-enable-media--flush: false !default;
 
 
 
-/**
- * Size variants.
- */
-
 @if ($inuit-enable-media--small == true) {
+
+    /**
+     * Small media objects.
+     */
 
     .#{$inuit-namespace}media--small,
     %#{$inuit-namespace}media--small {
@@ -68,6 +68,10 @@ $inuit-enable-media--flush: false !default;
         }
 
         @if ($inuit-enable-media--rev == true) {
+
+            /**
+             * Small reversed media objects.
+             */
 
             &.#{$inuit-namespace}media--rev,
             &%#{$inuit-namespace}media--rev {
@@ -88,6 +92,10 @@ $inuit-enable-media--flush: false !default;
 
 @if ($inuit-enable-media--large == true) {
 
+    /**
+     * Large media objects.
+     */
+
     .#{$inuit-namespace}media--large,
     %#{$inuit-namespace}media--large {
 
@@ -97,6 +105,10 @@ $inuit-enable-media--flush: false !default;
         }
 
         @if ($inuit-enable-media--rev == true) {
+
+            /**
+             * Large reversed media objects.
+             */
 
             &.#{$inuit-namespace}media--rev,
             &%#{$inuit-namespace}media--rev {
@@ -119,11 +131,11 @@ $inuit-enable-media--flush: false !default;
 
 
 
-/**
- * Reversed image location (right instead of left). Extends `.media`.
- */
-
 @if ($inuit-enable-media--rev == true) {
+
+    /**
+     * Reversed image location (right instead of left). Extends `.media`.
+     */
 
     .#{$inuit-namespace}media--rev,
     %#{$inuit-namespace}media--rev {
@@ -143,11 +155,11 @@ $inuit-enable-media--flush: false !default;
 
 
 
-/**
- * Flush media objects have no space between the image- and text-content.
- */
-
 @if ($inuit-enable-media--flush == true) {
+
+    /**
+     * Flush media objects have no space between the image- and text-content.
+     */
 
     .#{$inuit-namespace}media--flush,
     %#{$inuit-namespace}media--flush {
