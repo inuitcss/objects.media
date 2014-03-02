@@ -8,14 +8,16 @@
  */
 
 // Predefine the variables below in order to alter and enable specific features.
-$inuit-media-gutter:        $inuit-base-spacing-unit !default;
-$inuit-media-gutter--small: halve($inuit-media-gutter) !default;
-$inuit-media-gutter--large: double($inuit-media-gutter) !default;
+$inuit-media-gutter:                $inuit-base-spacing-unit !default;
+$inuit-media-gutter--small:         halve($inuit-media-gutter) !default;
+$inuit-media-gutter--large:         double($inuit-media-gutter) !default;
 
-$inuit-enable-media--small: false !default;
-$inuit-enable-media--large: false !default;
-$inuit-enable-media--rev:   false !default;
-$inuit-enable-media--flush: false !default;
+$inuit-enable-media--small:         false !default;
+$inuit-enable-media--large:         false !default;
+$inuit-enable-media--rev:           false !default;
+$inuit-enable-media--flush:         false !default;
+$inuit-enable-media--responsive:    false !default;
+$inuit-media-collapse-at:           720px !default;
 
 
 
@@ -168,6 +170,73 @@ $inuit-enable-media--flush: false !default;
         > %#{$inuit-namespace}media__img {
             margin-right: 0;
             margin-left:  0;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($inuit-enable-media--responsive == true) {
+
+    /**
+     * Responsive media objects.
+     */
+
+    @media screen and (max-width: $inuit-media-collapse-at) {
+
+        .#{$inuit-namespace}media--responsive,
+        %#{$inuit-namespace}media--responsive {
+
+            > .#{$inuit-namespace}media__img,
+            > %#{$inuit-namespace}media__img {
+                float: none;
+                margin-right: 0;
+                margin-bottom: $inuit-media-gutter;
+                margin-left:  0;
+            }
+
+            @if ($inuit-enable-media--small == true) {
+
+                /**
+                 * Small responsive medias.
+                 */
+
+                &.#{$inuit-namespace}media--small,
+                &%#{$inuit-namespace}media--small {
+
+                    > .#{$inuit-namespace}media__img,
+                    > %#{$inuit-namespace}media__img {
+                        margin-right: 0;
+                        margin-left:  0;
+                    }
+
+                }
+
+            }
+
+            @if ($inuit-enable-media--large == true) {
+
+                /**
+                 * Large responsive medias.
+                 */
+
+                &.#{$inuit-namespace}media--large,
+                &%#{$inuit-namespace}media--large {
+
+                    > .#{$inuit-namespace}media__img,
+                    > %#{$inuit-namespace}media__img {
+                        margin-right: 0;
+                        margin-left:  0;
+                    }
+
+                }
+
+            }
+
         }
 
     }
