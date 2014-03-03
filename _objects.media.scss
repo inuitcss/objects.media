@@ -184,6 +184,16 @@ $inuit-media-collapse-at:           720px !default;
 
     /**
      * Responsive media objects.
+     *
+     * There is a very pragmatic, simple responsive implementation of a
+     * responsive media object, which simply places the text-content beneath the
+     * image-content.
+     *
+     * We use a `max-width` media query because:
+     *
+     * a) it is the least verbose method in terms of amount of code required.
+     * b) the media object’s default state is image-next-to-text, so its stacked
+     *    state is the exception,rather than the rule.
      */
 
     @media screen and (max-width: $inuit-media-collapse-at) {
@@ -191,6 +201,9 @@ $inuit-media-collapse-at:           720px !default;
         .#{$inuit-namespace}media--responsive,
         %#{$inuit-namespace}media--responsive {
 
+            /**
+             * Rework the spacings on regular media objects.
+             */
             > .#{$inuit-namespace}media__img,
             > %#{$inuit-namespace}media__img {
                 float: none;
@@ -202,7 +215,11 @@ $inuit-media-collapse-at:           720px !default;
             @if ($inuit-enable-media--small == true) {
 
                 /**
-                 * Small responsive medias.
+                 * Small responsive media objects.
+                 *
+                 * Take a little more heavy-handed approach to reworking
+                 * spacings on media objects that are also small media objects
+                 * in their regular state.
                  */
 
                 &.#{$inuit-namespace}media--small,
@@ -221,7 +238,11 @@ $inuit-media-collapse-at:           720px !default;
             @if ($inuit-enable-media--large == true) {
 
                 /**
-                 * Large responsive medias.
+                 * Large responsive media objects.
+                 *
+                 * Take a little more heavy-handed approach to reworking
+                 * spacings on media objects that are also large media objects
+                 * in their regular state.
                  */
 
                 &.#{$inuit-namespace}media--large,
