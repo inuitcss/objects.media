@@ -185,15 +185,14 @@ $inuit-media-collapse-at:           720px !default;
     /**
      * Responsive media objects.
      *
-     * There is a very pragmatic, simple responsive implementation of a
-     * responsive media object, which simply places the text-content beneath the
-     * image-content.
+     * There is a very pragmatic, simple implementation of a responsive media
+     * object, which simply places the text-content beneath the image-content.
      *
      * We use a `max-width` media query because:
      *
      * a) it is the least verbose method in terms of amount of code required.
      * b) the media object’s default state is image-next-to-text, so its stacked
-     *    state is the exception,rather than the rule.
+     *    state is the exception, rather than the rule.
      */
 
     @media screen and (max-width: $inuit-media-collapse-at) {
