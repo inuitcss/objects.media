@@ -43,6 +43,7 @@ $inuit-media-collapse-at:           720px !default;
     .#{$inuit-namespace}media__body,
     %#{$inuit-namespace}media__body {
         overflow: hidden;
+        display: block;
 
         &,
         > :last-child {
