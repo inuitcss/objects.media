@@ -8,6 +8,8 @@
  */
 
 // Predefine the variables below in order to alter and enable specific features.
+$inuit-media-namespace:             $inuit-namespace !default;
+
 $inuit-media-gutter:                $inuit-base-spacing-unit !default;
 $inuit-media-gutter--small:         halve($inuit-media-gutter) !default;
 $inuit-media-gutter--large:         double($inuit-media-gutter) !default;
@@ -23,14 +25,14 @@ $inuit-media-collapse-at:           720px !default;
 
 
 
-.#{$inuit-namespace}media,
-%#{$inuit-namespace}media {
+.#{$inuit-media-namespace}media,
+%#{$inuit-media-namespace}media {
     @extend %clearfix;
     display: block;
 }
 
-    .#{$inuit-namespace}media__img,
-    %#{$inuit-namespace}media__img {
+    .#{$inuit-media-namespace}media__img,
+    %#{$inuit-media-namespace}media__img {
         float: left;
         margin-right: $inuit-media-gutter;
 
@@ -40,8 +42,8 @@ $inuit-media-collapse-at:           720px !default;
 
     }
 
-    .#{$inuit-namespace}media__body,
-    %#{$inuit-namespace}media__body {
+    .#{$inuit-media-namespace}media__body,
+    %#{$inuit-media-namespace}media__body {
         overflow: hidden;
         display: block;
 
@@ -62,11 +64,11 @@ $inuit-media-collapse-at:           720px !default;
      * Small media objects.
      */
 
-    .#{$inuit-namespace}media--small,
-    %#{$inuit-namespace}media--small {
+    .#{$inuit-media-namespace}media--small,
+    %#{$inuit-media-namespace}media--small {
 
-        > .#{$inuit-namespace}media__img,
-        > %#{$inuit-namespace}media__img {
+        > .#{$inuit-media-namespace}media__img,
+        > %#{$inuit-media-namespace}media__img {
             margin-right: $inuit-media-gutter--small;
         }
 
@@ -76,11 +78,11 @@ $inuit-media-collapse-at:           720px !default;
              * Small reversed media objects.
              */
 
-            &.#{$inuit-namespace}media--rev,
-            &%#{$inuit-namespace}media--rev {
+            &.#{$inuit-media-namespace}media--rev,
+            &%#{$inuit-media-namespace}media--rev {
 
-                > .#{$inuit-namespace}media__img,
-                > %#{$inuit-namespace}media__img {
+                > .#{$inuit-media-namespace}media__img,
+                > %#{$inuit-media-namespace}media__img {
                     margin-right: 0;
                     margin-left:  $inuit-media-gutter--small;
                 }
@@ -99,11 +101,11 @@ $inuit-media-collapse-at:           720px !default;
      * Large media objects.
      */
 
-    .#{$inuit-namespace}media--large,
-    %#{$inuit-namespace}media--large {
+    .#{$inuit-media-namespace}media--large,
+    %#{$inuit-media-namespace}media--large {
 
-        > .#{$inuit-namespace}media__img,
-        > %#{$inuit-namespace}media__img {
+        > .#{$inuit-media-namespace}media__img,
+        > %#{$inuit-media-namespace}media__img {
             margin-right: $inuit-media-gutter--large;
         }
 
@@ -113,8 +115,8 @@ $inuit-media-collapse-at:           720px !default;
              * Large reversed media objects.
              */
 
-            &.#{$inuit-namespace}media--rev,
-            &%#{$inuit-namespace}media--rev {
+            &.#{$inuit-media-namespace}media--rev,
+            &%#{$inuit-media-namespace}media--rev {
 
                 > .media__img,
                 > %media__img {
@@ -140,11 +142,11 @@ $inuit-media-collapse-at:           720px !default;
      * Reversed image location (right instead of left). Extends `.media`.
      */
 
-    .#{$inuit-namespace}media--rev,
-    %#{$inuit-namespace}media--rev {
+    .#{$inuit-media-namespace}media--rev,
+    %#{$inuit-media-namespace}media--rev {
 
-        > .#{$inuit-namespace}media__img,
-        > %#{$inuit-namespace}media__img {
+        > .#{$inuit-media-namespace}media__img,
+        > %#{$inuit-media-namespace}media__img {
             float: right;
             margin-right: 0;
             margin-left: $inuit-media-gutter;
@@ -164,11 +166,11 @@ $inuit-media-collapse-at:           720px !default;
      * Flush media objects have no space between the image- and text-content.
      */
 
-    .#{$inuit-namespace}media--flush,
-    %#{$inuit-namespace}media--flush {
+    .#{$inuit-media-namespace}media--flush,
+    %#{$inuit-media-namespace}media--flush {
 
-        > .#{$inuit-namespace}media__img,
-        > %#{$inuit-namespace}media__img {
+        > .#{$inuit-media-namespace}media__img,
+        > %#{$inuit-media-namespace}media__img {
             margin-right: 0;
             margin-left:  0;
         }
@@ -198,14 +200,14 @@ $inuit-media-collapse-at:           720px !default;
 
     @media screen and (max-width: $inuit-media-collapse-at) {
 
-        .#{$inuit-namespace}media--responsive,
-        %#{$inuit-namespace}media--responsive {
+        .#{$inuit-media-namespace}media--responsive,
+        %#{$inuit-media-namespace}media--responsive {
 
             /**
              * Rework the spacings on regular media objects.
              */
-            > .#{$inuit-namespace}media__img,
-            > %#{$inuit-namespace}media__img {
+            > .#{$inuit-media-namespace}media__img,
+            > %#{$inuit-media-namespace}media__img {
                 float: none;
                 margin-right: 0;
                 margin-bottom: $inuit-media-gutter;
@@ -222,11 +224,11 @@ $inuit-media-collapse-at:           720px !default;
                  * in their regular state.
                  */
 
-                &.#{$inuit-namespace}media--small,
-                &%#{$inuit-namespace}media--small {
+                &.#{$inuit-media-namespace}media--small,
+                &%#{$inuit-media-namespace}media--small {
 
-                    > .#{$inuit-namespace}media__img,
-                    > %#{$inuit-namespace}media__img {
+                    > .#{$inuit-media-namespace}media__img,
+                    > %#{$inuit-media-namespace}media__img {
                         margin-right: 0;
                         margin-left:  0;
                     }
@@ -245,11 +247,11 @@ $inuit-media-collapse-at:           720px !default;
                  * in their regular state.
                  */
 
-                &.#{$inuit-namespace}media--large,
-                &%#{$inuit-namespace}media--large {
+                &.#{$inuit-media-namespace}media--large,
+                &%#{$inuit-media-namespace}media--large {
 
-                    > .#{$inuit-namespace}media__img,
-                    > %#{$inuit-namespace}media__img {
+                    > .#{$inuit-media-namespace}media__img,
+                    > %#{$inuit-media-namespace}media__img {
                         margin-right: 0;
                         margin-left:  0;
                     }
