@@ -11,11 +11,15 @@
 $inuit-media-namespace:             $inuit-namespace !default;
 
 $inuit-media-gutter:                $inuit-base-spacing-unit !default;
-$inuit-media-gutter--small:         halve($inuit-media-gutter) !default;
-$inuit-media-gutter--large:         double($inuit-media-gutter) !default;
+$inuit-media-gutter--tiny:            quarter($inuit-media-gutter) !default;
+$inuit-media-gutter--small:             halve($inuit-media-gutter) !default;
+$inuit-media-gutter--large:            double($inuit-media-gutter) !default;
+$inuit-media-gutter--huge:          quadruple($inuit-media-gutter) !default;
 
+$inuit-enable-media--tiny:          false !default;
 $inuit-enable-media--small:         false !default;
 $inuit-enable-media--large:         false !default;
+$inuit-enable-media--huge:          false !default;
 $inuit-enable-media--rev:           false !default;
 $inuit-enable-media--flush:         false !default;
 $inuit-enable-media--responsive:    false !default;
@@ -57,6 +61,43 @@ $inuit-media-collapse-at:           720px !default;
 
 
 
+
+@if ($inuit-enable-media--tiny == true) {
+
+    /**
+     * Tiny media objects.
+     */
+
+    .#{$inuit-media-namespace}media--tiny,
+    %#{$inuit-media-namespace}media--tiny {
+
+        > .#{$inuit-media-namespace}media__img,
+        > %#{$inuit-media-namespace}media__img {
+            margin-right: $inuit-media-gutter--tiny;
+        }
+
+        @if ($inuit-enable-media--rev == true) {
+
+            /**
+             * Tiny reversed media objects.
+             */
+
+            &.#{$inuit-media-namespace}media--rev,
+            &%#{$inuit-media-namespace}media--rev {
+
+                > .#{$inuit-media-namespace}media__img,
+                > %#{$inuit-media-namespace}media__img {
+                    margin-right: 0;
+                    margin-left:  $inuit-media-gutter--tiny;
+                }
+
+            }
+
+        }
+
+    }
+
+}
 
 @if ($inuit-enable-media--small == true) {
 
@@ -122,6 +163,43 @@ $inuit-media-collapse-at:           720px !default;
                 > %media__img {
                     margin-right: 0;
                     margin-left:  $inuit-media-gutter--large;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+@if ($inuit-enable-media--huge == true) {
+
+    /**
+     * Huge media objects.
+     */
+
+    .#{$inuit-media-namespace}media--huge,
+    %#{$inuit-media-namespace}media--huge {
+
+        > .#{$inuit-media-namespace}media__img,
+        > %#{$inuit-media-namespace}media__img {
+            margin-right: $inuit-media-gutter--huge;
+        }
+
+        @if ($inuit-enable-media--rev == true) {
+
+            /**
+             * Huge reversed media objects.
+             */
+
+            &.#{$inuit-media-namespace}media--rev,
+            &%#{$inuit-media-namespace}media--rev {
+
+                > .media__img,
+                > %media__img {
+                    margin-right: 0;
+                    margin-left:  $inuit-media-gutter--huge;
                 }
 
             }
@@ -214,6 +292,30 @@ $inuit-media-collapse-at:           720px !default;
                 margin-left:  0;
             }
 
+            @if ($inuit-enable-media--tiny == true) {
+
+                /**
+                 * Tiny responsive media objects.
+                 *
+                 * Take a little more heavy-handed approach to reworking
+                 * spacings on media objects that are also tiny media objects
+                 * in their regular state.
+                 */
+
+                &.#{$inuit-media-namespace}media--tiny,
+                &%#{$inuit-media-namespace}media--tiny {
+
+                    > .#{$inuit-media-namespace}media__img,
+                    > %#{$inuit-media-namespace}media__img {
+                        margin-right: 0;
+                        margin-left:  0;
+                        margin-bottom: $inuit-media-gutter--tiny;
+                    }
+
+                }
+
+            }
+
             @if ($inuit-enable-media--small == true) {
 
                 /**
@@ -231,6 +333,7 @@ $inuit-media-collapse-at:           720px !default;
                     > %#{$inuit-media-namespace}media__img {
                         margin-right: 0;
                         margin-left:  0;
+                        margin-bottom: $inuit-media-gutter--small;
                     }
 
                 }
@@ -254,6 +357,31 @@ $inuit-media-collapse-at:           720px !default;
                     > %#{$inuit-media-namespace}media__img {
                         margin-right: 0;
                         margin-left:  0;
+                        margin-bottom: $inuit-media-gutter--large;
+                    }
+
+                }
+
+            }
+
+            @if ($inuit-enable-media--huge == true) {
+
+                /**
+                 * Huge responsive media objects.
+                 *
+                 * Take a little more heavy-handed approach to reworking
+                 * spacings on media objects that are also huge media objects
+                 * in their regular state.
+                 */
+
+                &.#{$inuit-media-namespace}media--huge,
+                &%#{$inuit-media-namespace}media--huge {
+
+                    > .#{$inuit-media-namespace}media__img,
+                    > %#{$inuit-media-namespace}media__img {
+                        margin-right: 0;
+                        margin-left:  0;
+                        margin-bottom: $inuit-media-gutter--huge;
                     }
 
                 }
