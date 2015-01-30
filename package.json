@@ -1,0 +1,26 @@
+{
+  "name": "inuit-media",
+  "version": "0.4.2",
+  "description": "Nicole Sullivan’s media object in the inuitcss framework",
+  "main": "_objects.media.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inuitcss/objects.media.git"
+  },
+  "author": "Harry Roberts <harry@csswizardry.com>",
+  "license": "Apache 2",
+  "bugs": {
+    "url": "https://github.com/inuitcss/objects.media/issues"
+  },
+  "homepage": "https://github.com/inuitcss/objects.media",
+  "keywords": [
+    "inuitcss",
+    "oocss",
+    "css"
+  ],
+  "dependencies": {
+    "inuit-defaults": "~0.2.1",
+    "inuit-clearfix": "~0.2.0",
+    "inuit-functions": "~0.2.0"
+  }
+}

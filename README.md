@@ -28,6 +28,10 @@ module via a Git Submodule, or copy and paste.
 
     $ bower install --save inuit-media
 
+### Install using npm:
+
+    $ npm install --save inuit-media
+
 Once installed, `@import` into your project in its Objects layer:
 
     @import "bower_components/inuit-media/objects.media";
