@@ -8,6 +8,7 @@
  */
 
 // Predefine the variables below in order to alter and enable specific features.
+$inuit-object-namespace:            null !default;
 $inuit-media-namespace:             $inuit-namespace !default;
 
 $inuit-media-gutter:                $inuit-base-spacing-unit !default;
@@ -29,8 +30,8 @@ $inuit-media-collapse-at:           720px !default;
 
 
 
-.#{$inuit-media-namespace}media,
-%#{$inuit-media-namespace}media {
+.#{$inuit-object-namespace}#{$inuit-media-namespace}media,
+%#{$inuit-object-namespace}#{$inuit-media-namespace}media {
     @extend %clearfix;
     display: block;
 }
