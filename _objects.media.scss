@@ -23,7 +23,6 @@ $inuit-enable-media--huge:          false !default;
 $inuit-enable-media--rev:           false !default;
 $inuit-enable-media--flush:         false !default;
 $inuit-enable-media--responsive:    false !default;
-$inuit-media-collapse-at:           720px !default;
 
 
 
@@ -268,128 +267,136 @@ $inuit-media-collapse-at:           720px !default;
      *
      * There is a very pragmatic, simple implementation of a responsive media
      * object, which simply places the text-content beneath the image-content.
-     *
-     * We use a `max-width` media query because:
-     *
-     * a) it is the least verbose method in terms of amount of code required.
-     * b) the media object’s default state is image-next-to-text, so its stacked
-     *    state is the exception, rather than the rule.
      */
 
-    @media screen and (max-width: $inuit-media-collapse-at) {
+    @each $breakpoint in $breakpoints {
 
-        .#{$inuit-media-namespace}media--responsive,
-        %#{$inuit-media-namespace}media--responsive {
+        $alias:     nth($breakpoint, 1);
+        $condition: nth($breakpoint, 2);
 
-            /**
-             * Rework the spacings on regular media objects.
-             */
-            > .#{$inuit-media-namespace}media__img,
-            > %#{$inuit-media-namespace}media__img {
-                float: none;
-                margin-right: 0;
-                margin-bottom: $inuit-media-gutter;
-                margin-left:  0;
-            }
+        // This isn’t ideal, but we definitely don’t want to generate
+        // media--responsive for retina devices. Exclude retina
+        // media-qeuries manually.
+        @if ($alias != "retina") {
 
-            @if ($inuit-enable-media--tiny == true) {
+            @include media-query($alias) {
 
-                /**
-                 * Tiny responsive media objects.
-                 *
-                 * Take a little more heavy-handed approach to reworking
-                 * spacings on media objects that are also tiny media objects
-                 * in their regular state.
-                 */
+                .#{$inuit-media-namespace}#{$alias}-media--responsive,
+                %#{$inuit-media-namespace}#{$alias}-media--responsive {
 
-                &.#{$inuit-media-namespace}media--tiny,
-                &%#{$inuit-media-namespace}media--tiny {
-
+                    /**
+                     * Rework the spacings on regular media objects.
+                     */
                     > .#{$inuit-media-namespace}media__img,
                     > %#{$inuit-media-namespace}media__img {
+                        float: none;
                         margin-right: 0;
+                        margin-bottom: $inuit-media-gutter;
                         margin-left:  0;
-                        margin-bottom: $inuit-media-gutter--tiny;
+                    }
+
+                    @if ($inuit-enable-media--tiny == true) {
+
+                        /**
+                         * Tiny responsive media objects.
+                         *
+                         * Take a little more heavy-handed approach to reworking
+                         * spacings on media objects that are also tiny media
+                         * objects in their regular state.
+                         */
+
+                        &.#{$inuit-media-namespace}media--tiny,
+                        &%#{$inuit-media-namespace}media--tiny {
+
+                            > .#{$inuit-media-namespace}media__img,
+                            > %#{$inuit-media-namespace}media__img {
+                                margin-right: 0;
+                                margin-left:  0;
+                                margin-bottom: $inuit-media-gutter--tiny;
+                            }
+
+                        }
+
+                    }
+
+                    @if ($inuit-enable-media--small == true) {
+
+                        /**
+                         * Small responsive media objects.
+                         *
+                         * Take a little more heavy-handed approach to reworking
+                         * spacings on media objects that are also small media
+                         * objects in their regular state.
+                         */
+
+                        &.#{$inuit-media-namespace}media--small,
+                        &%#{$inuit-media-namespace}media--small {
+
+                            > .#{$inuit-media-namespace}media__img,
+                            > %#{$inuit-media-namespace}media__img {
+                                margin-right: 0;
+                                margin-left:  0;
+                                margin-bottom: $inuit-media-gutter--small;
+                            }
+
+                        }
+
+                    }
+
+                    @if ($inuit-enable-media--large == true) {
+
+                        /**
+                         * Large responsive media objects.
+                         *
+                         * Take a little more heavy-handed approach to reworking
+                         * spacings on media objects that are also large media
+                         * objects in their regular state.
+                         */
+
+                        &.#{$inuit-media-namespace}media--large,
+                        &%#{$inuit-media-namespace}media--large {
+
+                            > .#{$inuit-media-namespace}media__img,
+                            > %#{$inuit-media-namespace}media__img {
+                                margin-right: 0;
+                                margin-left:  0;
+                                margin-bottom: $inuit-media-gutter--large;
+                            }
+
+                        }
+
+                    }
+
+                    @if ($inuit-enable-media--huge == true) {
+
+                        /**
+                         * Huge responsive media objects.
+                         *
+                         * Take a little more heavy-handed approach to reworking
+                         * spacings on media objects that are also huge media
+                         * objects in their regular state.
+                         */
+
+                        &.#{$inuit-media-namespace}media--huge,
+                        &%#{$inuit-media-namespace}media--huge {
+
+                            > .#{$inuit-media-namespace}media__img,
+                            > %#{$inuit-media-namespace}media__img {
+                                margin-right: 0;
+                                margin-left:  0;
+                                margin-bottom: $inuit-media-gutter--huge;
+                            }
+
+                        }
+
                     }
 
                 }
 
-            }
+            } // Close media query.
 
-            @if ($inuit-enable-media--small == true) {
+        } // Close retina check.
 
-                /**
-                 * Small responsive media objects.
-                 *
-                 * Take a little more heavy-handed approach to reworking
-                 * spacings on media objects that are also small media objects
-                 * in their regular state.
-                 */
-
-                &.#{$inuit-media-namespace}media--small,
-                &%#{$inuit-media-namespace}media--small {
-
-                    > .#{$inuit-media-namespace}media__img,
-                    > %#{$inuit-media-namespace}media__img {
-                        margin-right: 0;
-                        margin-left:  0;
-                        margin-bottom: $inuit-media-gutter--small;
-                    }
-
-                }
-
-            }
-
-            @if ($inuit-enable-media--large == true) {
-
-                /**
-                 * Large responsive media objects.
-                 *
-                 * Take a little more heavy-handed approach to reworking
-                 * spacings on media objects that are also large media objects
-                 * in their regular state.
-                 */
-
-                &.#{$inuit-media-namespace}media--large,
-                &%#{$inuit-media-namespace}media--large {
-
-                    > .#{$inuit-media-namespace}media__img,
-                    > %#{$inuit-media-namespace}media__img {
-                        margin-right: 0;
-                        margin-left:  0;
-                        margin-bottom: $inuit-media-gutter--large;
-                    }
-
-                }
-
-            }
-
-            @if ($inuit-enable-media--huge == true) {
-
-                /**
-                 * Huge responsive media objects.
-                 *
-                 * Take a little more heavy-handed approach to reworking
-                 * spacings on media objects that are also huge media objects
-                 * in their regular state.
-                 */
-
-                &.#{$inuit-media-namespace}media--huge,
-                &%#{$inuit-media-namespace}media--huge {
-
-                    > .#{$inuit-media-namespace}media__img,
-                    > %#{$inuit-media-namespace}media__img {
-                        margin-right: 0;
-                        margin-left:  0;
-                        margin-bottom: $inuit-media-gutter--huge;
-                    }
-
-                }
-
-            }
-
-        }
-
-    }
+    } // Close breakpoints loop.
 
 }
