@@ -54,33 +54,33 @@ its Objects layer.
 
 Basic usage of the Media object uses the required classes:
 
-    <div class="media">
-        <img src="/path/to/image.png" alt="" class="media__img" />
-        <div class="media__body">
+    <div class="o-media">
+        <img src="/path/to/image.png" alt="" class="o-media__img" />
+        <div class="o-media__body">
             <p>Text-like content goes here.</p>
         </div>
     </div>
 
-The only valid children of the `.media` node are `.media__img` and
-`.media__body`.
+The only valid children of the `.o-media` node are `.o-media__img` and
+`.o-media__body`.
 
 ## Options
 
 Other, optional classes can supplement the required base classes:
 
-* `.media--flush`: remove the space between the image- and text-content.
-* `.media--[tiny|small|large|huge]`: alter the spacing between the image- and
+* `.o-media--flush`: remove the space between the image- and text-content.
+* `.o-media--[tiny|small|large|huge]`: alter the spacing between the image- and
   text-content.
-* `.media--rev`: reverse the horizontal rendered order of the image- and
+* `.o-media--rev`: reverse the horizontal rendered order of the image- and
   text-content.
-* `.media--responsive`: a very basic responsive implementation of the media
+* `.o-media--responsive`: a very basic responsive implementation of the media
   object. Pragmatic; far from perfect.
 
 For example:
 
-    <div class="media  media--flush  media--rev">
-        <img src="/path/to/image.png" alt="" class="media__img" />
-        <div class="media__body">
+    <div class="o-media  o-media--flush  o-media--rev">
+        <img src="/path/to/image.png" alt="" class="o-media__img" />
+        <div class="o-media__body">
             <p>Text-like content goes here.</p>
         </div>
     </div>

@@ -1,6 +1,6 @@
 {
   "name": "inuit-media",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Nicole Sullivan’s media object in the inuitcss framework",
   "main": "_objects.media.scss",
   "repository": {
